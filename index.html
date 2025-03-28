@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Прием отработанных аккумуляторов в Самаре — высокие цены, самовывоз. Сдаем автомобильные, тяговые и гелевые аккумуляторы дорого!">
+    <meta name="keywords" content="прием аккумуляторов Самара, сдать аккумуляторы, сдать аккумулятор дорого, самовывоз аккумуляторов">
+    <title>♻ Прием аккумуляторов в Самаре</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e6f3e6, #f9f9f9);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1a3c34;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 10px 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            background: #a9d6b5;
+            color: #1a3c34;
+        }
+
+        .phone {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #ff6f61;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 10px 0;
+        }
+
+        .section {
+            display: none;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero {
+            background: linear-gradient(45deg, #1a3c34, #2e6b5e);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            background: #e65b50;
+            transform: scale(1.05);
+        }
+
+        .content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #1a3c34;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card img, .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Unique Section Styles */
+        #why-us { background: #f9e79f; color: #333; text-align: center; }
+        #prices { background: linear-gradient(to bottom, #a9d6b5, #fff); color: #1a3c34; }
+        #process { background: #d5f5e3; text-align: center; }
+        #contacts { background: linear-gradient(to right, #2e6b5e, #1a3c34); color: white; text-align: center; }
+        #faq { background: #fff3e6; color: #333; }
+
+        #prices table {
+            width: 80%;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #prices th, #prices td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        #prices th {
+            background: #1a3c34;
+            color: white;
+        }
+
+        #process .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        #process .step {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #faq .faq-item {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #1a3c34;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .cards { grid-template-columns: 1fr; }
+            #process .steps { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>♻ Прием аккумуляторов</h1>
+            <ul>
+                <li><a data-section="home">Главная</a></li>
+                <li><a data-section="car">Автомобильные</a></li>
+                <li><a data-section="traction">Тяговые</a></li>
+                <li><a data-section="gel">Гелевые</a></li>
+                <li><a data-section="why-us">Почему мы?</a></li>
+                <li><a data-section="prices">Цены</a></li>
+                <li><a data-section="process">Процесс</a></li>
+                <li><a data-section="contacts">Контакты</a></li>
+                <li><a data-section="faq">FAQ</a></li>
+            </ul>
+            <span class="phone">📞 +7 (XXX) XXX-XX-XX</span>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section hero active">
+        <h2>♻ Прием аккумуляторов в Самаре</h2>
+        <p>🔋 Сдаем отработанные аккумуляторы по высоким ценам с удобным самовывозом!</p>
+        <a href="tel:+7XXXXXXXXXX" class="btn">Позвонить сейчас</a>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Стопка аккумуляторов">
+            <p>Мы принимаем любые отработанные аккумуляторы в Самаре. Высокие цены, быстрый самовывоз с нашими грузчиками и транспортом. Помогите экологии и заработайте!</p>
+            <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Эко-дружелюбная природа">
+            <div class="cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Автомобильные аккумуляторы">
+                    <h3>🚗 Автомобильные</h3>
+                    <p>От легковых и грузовых авто.</p>
+                    <a data-section="car" class="btn">Подробнее</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1621861743168-3f96e1b07d42?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Тяговые аккумуляторы">
+                    <h3>🏋️ Тяговые</h3>
+                    <p>От погрузчиков и спецтехники.</p>
+                    <a data-section="traction" class="btn">Подробнее</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Гелевые аккумуляторы">
+                    <h3>💡 Гелевые</h3>
+                    <p>От ИБП и серверов.</p>
+                    <a data-section="gel" class="btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Batteries Section -->
+    <section id="car" class="section hero">
+        <h2>🚗 Автомобильные аккумуляторы</h2>
+        <p>🔋 Сдайте батареи от легковых и грузовых авто по высоким ценам!</p>
+        <a href="tel:+7XXXXXXXXXX" class="btn">Сдать сейчас</a>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Автомобильный аккумулятор">
+            <p>Принимаем аккумуляторы от любых автомобилей — от малолитражек до тяжелых грузовиков. Вы получите лучшую цену в Самаре, а мы заберем батареи с вашего адреса с помощью наших грузчиков и транспорта.</p>
+            <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Грузовик с аккумуляторами">
+            <p>Сдавайте старые аккумуляторы и получайте деньги быстро и удобно!</p>
+        </div>
+    </section>
+
+    <!-- Traction Batteries Section -->
+    <section id="traction" class="section hero">
+        <h2>🏋️ Тяговые аккумуляторы</h2>
+        <p>🔋 От электропогрузчиков и спецтехники с самовывозом!</p>
+        <a href="tel:+7XXXXXXXXXX" class="btn">Сдать сейчас</a>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1621861743168-3f96e1b07d42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Тяговый аккумулятор на погрузчике">
+            <p>Мы принимаем тяговые аккумуляторы от складской техники, электропогрузчиков и другого оборудования. Высокие цены и удобный самовывоз в Самаре — просто позвоните нам!</p>
+            <img src="https://images.unsplash.com/photo-1581092160607-2cbc5b6e90e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Электропогрузчик в работе">
+            <p>Надежная утилизация и быстрые выплаты гарантированы.</p>
+        </div>
+    </section>
+
+    <!-- Gel Batteries Section -->
+    <section id="gel" class="section hero">
+        <h2>💡 Гелевые аккумуляторы</h2>
+        <p>🔋 От ИБП и серверов — сдайте выгодно!</p>
+        <a href="tel:+7XXXXXXXXXX" class="btn">Сдать сейчас</a>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Гелевый аккумулятор">
+            <p>Принимаем гелевые аккумуляторы от источников бесперебойного питания (ИБП), серверов и других систем. Максимальная выгода и самовывоз в Самаре — мы сделаем процесс простым и быстрым.</p>
+            <img src="https://images.unsplash.com/photo-1517048676734-516bea0e7de2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Серверная стойка с ИБП">
+            <p>Сдайте свои батареи и позаботьтесь об экологии!</p>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section">
+        <h2>🌟 Почему выбирают нас?</h2>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Аккумуляторы в работе">
+            <p>Мы — ваш надежный партнер в Самаре по приему аккумуляторов. Вот почему клиенты выбирают нас снова и снова:</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Деньги">
+                    <h3>💰 Высокие цены</h3>
+                    <p>Лучшая стоимость за ваши аккумуляторы.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Грузовик">
+                    <h3>🚚 Самовывоз</h3>
+                    <p>Грузчики и транспорт приедут к вам.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Природа">
+                    <h3>♻ Экологичность</h3>
+                    <p>Безопасная утилизация для природы.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Часы">
+                    <h3>⚡ Быстрота</h3>
+                    <p>Оформление и выплаты за минуты.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prices Section -->
+    <section id="prices" class="section">
+        <h2>💸 Наши цены</h2>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Деньги и калькулятор">
+            <p>Мы предлагаем конкурентные цены за ваши аккумуляторы. Ознакомьтесь с ориентировочными ставками:</p>
+            <table>
+                <tr><th>Тип аккумулятора</th><th>Цена за кг</th></tr>
+                <tr><td>Автомобильные</td><td>60-80 ₽</td></tr>
+                <tr><td>Тяговые</td><td>70-90 ₽</td></tr>
+                <tr><td>Гелевые</td><td>50-70 ₽</td></tr>
+            </table>
+            <img src="https://images.unsplash.com/photo-1551288049-b5f3c2e205e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Калькулятор цен">
+            <p>*Цены зависят от объема, состояния и рыночных условий. Позвоните для точной оценки!</p>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <h2>📋 Как это работает?</h2>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Грузовик в процессе">
+            <p>Сдать аккумуляторы в Самаре проще простого. Вот как это происходит:</p>
+            <div class="steps">
+                <div class="step"><span>1️⃣</span> Звоните нам</div>
+                <div class="step"><span>2️⃣</span> Договариваемся о деталях</div>
+                <div class="step"><span>3️⃣</span> Мы приезжаем и забираем</div>
+                <div class="step"><span>4️⃣</span> Вы получаете деньги</div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Команда на работе">
+            <p>Все быстро, удобно и без лишних хлопот!</p>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="section">
+        <h2>📞 Свяжитесь с нами</h2>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1596524430619-036920d34c5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Офис и телефон">
+            <p>Готовы сдать аккумуляторы? Мы всегда на связи:</p>
+            <p>📲 Телефон: +7 (XXX) XXX-XX-XX</p>
+            <p>📍 Адрес: г. Самара, ул. Примерная, д. 10</p>
+            <p>✉ Email: info@akkum-samara.ru</p>
+            <p>⏰ Время работы: Пн-Пт 9:00-18:00, Сб 10:00-14:00</p>
+            <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cf83?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Карта города">
+            <a href="tel:+7XXXXXXXXXX" class="btn">Позвонить</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <h2>❓ Часто задаваемые вопросы</h2>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Команда отвечает на вопросы">
+            <p>У вас есть вопросы? Вот ответы на самые популярные:</p>
+            <div class="faq-item">
+                <h3>Какие аккумуляторы вы принимаете?</h3>
+                <p>Мы принимаем автомобильные, тяговые и гелевые аккумуляторы любых марок и состояния.</p>
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Разные аккумуляторы">
+            </div>
+            <div class="faq-item">
+                <h3>Сколько стоит сдать аккумулятор?</h3>
+                <p>Цена варьируется от 50 до 90 ₽/кг в зависимости от типа и объема.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Вы приезжаете сами?</h3>
+                <p>Да, мы организуем самовывоз с грузчиками и транспортом по Самаре.</p>
+                <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Самовывоз">
+            </div>
+            <div class="faq-item">
+                <h3>Нужно ли готовить аккумуляторы?</h3>
+                <p>Нет, просто позвоните — мы сделаем все за вас!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 ♻ Прием аккумуляторов в Самаре | 📞 +7 (XXX) XXX-XX-XX</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const links = document.querySelectorAll('nav ul li a, .card a');
+
+        function showSection(sectionId) {
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                showSection(sectionId);
+            });
+        });
+
+        showSection('home');
+    </script>
+</body>
+</html>
